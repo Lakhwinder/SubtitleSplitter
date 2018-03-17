@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.8/angular.min.js"></script>
+
+    <script src="../JS/Module.js"></script>
+    <script src="../JS/Controller.js"></script>
+    <script src="../JS/Service.js"></script>
+
+    <link href="../Content/Site.css" rel="stylesheet" />
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <title></title>
+</head>
+<body ng-app="app">
+    <nav class="navbar navbar-default navbar-inverse" role="navigation">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle"
+                    data-toggle="collapse" data-target="#example-navbar-collapse">
+                <span class="sr-only">Create Subtitles</span>
+            </button>
+
+            <a class="navbar-brand" href="#">Create Subtitles</a>
+        </div>
+    </nav>
+    <form ng-controller="SubtitleController">
+        <div class="col-sm-offset-2 col-sm-10" ng-form="subForm" >
+
+            <div class="form-group">
+                <label class="control-label">Text</label>
+                <textarea ng-model="inputText" name="inputText" class="form-control" placeholder="Add string here" required></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" ng-click="getSubtitles();" class="btn btn-default" ng-disabled="subForm.$invalid">Get Subtitles</button>
+
+                <table>
+                    <tr ng-repeat="subtitle in subtitles track by $index">
+                        <td>{{subtitle}}</td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+    </form>  
+
+</body>
+</html>
