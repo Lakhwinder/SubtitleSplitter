@@ -16,9 +16,10 @@ namespace SubtitleSplitter
                 "it's only here to ensure test converge. Finish line.  Aaa asdf  asdfjk las, asa. This is just to test.";
             SubtitleParser subtitleParser = new SubtitleParser();
             var subtitles = subtitleParser.Parse(SAMPLE_TEXT);
-            foreach (var item in subtitles)
+            
+			foreach (var item in subtitles)
             {
-                Console.WriteLine(item + " -" + item.ToCharArray().Length);
+                Console.WriteLine(item);
             }
 
         }
